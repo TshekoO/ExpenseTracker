@@ -39,10 +39,10 @@ Supports **categories, filtering, data export, and persistent storage** via JSON
 
 ## 📂 Project Structure
 📦 ExpenseTracker
-┣ 📜 Program.cs # Main application logic
-┣ 📜 expenses.json # Data storage (auto-created)
-┣ 📜 expenses.csv # CSV export file
-┗ 📜 README.md # Project documentation
+- ┣ 📜 Program.cs # Main application logic
+- ┣ 📜 expenses.json # Data storage (auto-created)
+- ┣ 📜 expenses.csv # CSV export file
+- ┗ 📜 README.md # Project documentation
 
 ---
 
