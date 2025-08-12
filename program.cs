@@ -28,7 +28,7 @@ namespace ExpenseTracker
         static string FilePath = "expenses.json";
 
         // List to hold all expenses records 
-        static List<Expenses> expenses = new List<Expenses>();
+        static List<Expense> expenses = new List<Expense>();
 
         static void Main()
         {
@@ -73,7 +73,7 @@ namespace ExpenseTracker
         // Add a new expense
         static void AddExpense()
         {
-            Console.write("Enter amount: R");
+            Console.Write("Enter amount: R");
 
             // Validate numeric input 
             if (!decimal.TryParse(Console.ReadLine(), out decimal amount))
@@ -101,7 +101,7 @@ namespace ExpenseTracker
             Console.ReadKey();
         }
         // Display a list of expenses
-        static void ViewExpenses(List<Expenses> list)
+        static void ViewExpenses(List<Expense> list)
         {
             Console.Clear();
             Console.WriteLine("=== Expenses ===");
@@ -114,7 +114,7 @@ namespace ExpenseTracker
             {
                 foreach (var expense in list)
                 {
-                    Console.WriteLine(expenses);
+                    Console.WriteLine(expense);
 
                 }
             }
@@ -196,9 +196,9 @@ namespace ExpenseTracker
         // Load expenses from a JSON file
         static void LoadExpenses()
         {
-            if (File.Exists(filePath))
+            if (File.Exists(FilePath))
             {
-                string json = FilePath.ReadAllText(FilePath);
+                string json = File.ReadAllText(FilePath);
                 expenses = JsonSerializer.Deserialize<List<Expense>>(json);
             }
         }
