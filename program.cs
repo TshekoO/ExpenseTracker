@@ -94,10 +94,43 @@ namespace ExpenseTracker
                 Category = category,
                 Description = description,
                 Date = DateTime.Now
-            
+
             }
             );
+            Console.WriteLine("Expense added! Press any key to continue...");
+            Console.ReadKey();
         }
+        // Display a list of expenses
+        static void ViewExpenses(List<Expenses> list)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Expenses ===");
 
+            if (!list.Any())
+            {
+                Console.WriteLine("No Expenses found.");
+            }
+            else
+            {
+                foreach (var expense in list)
+                {
+                    Console.WriteLine(expenses);
+
+                }
+            }
+            Console.WriteLine("\nPress any key to return ...");
+            Console.ReadKey();
+
+        }
+        //Show expenses for a specific category 
+        static void FilterByCategory()
+        {
+            Console.Write("Enter category to filter: ");
+            string category = Console.ReadLine();
+            // Match ignoring case 
+            var filtered = expenses
+           .Where(e => e.Category.Equals(category, StringComparison.OrdinalIgnoreCase)).ToList();
+            ViewExpenses(filtered);
+        }
     }
 }
