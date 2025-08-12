@@ -132,5 +132,30 @@ namespace ExpenseTracker
            .Where(e => e.Category.Equals(category, StringComparison.OrdinalIgnoreCase)).ToList();
             ViewExpenses(filtered);
         }
+        // Show expenses in a date range
+        static void FilterByDateRange()
+        {
+            Console.Write("Enter start date (yyy-mm-dd):");
+            if (!DateTime.TryParse(Console.ReadLine(), out DateTime start))
+            {
+                Console.WriteLine("Invalid date. Press any key to return.");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.Write("Enter end date (yyyy-mm-dd):");
+            if (!DateTime.TryParse(Console.ReadLine(), out DateTime end))
+            {
+                Console.WriteLine("Invalid date. Press any key to return.");
+                Console.ReadKey();
+                return;
+            }
+            // Filter using LINQ
+            var filtered = expenses
+            .Where(e => e.Date.Date >= start.Date && e.Date.Date <= end.Date)
+            .ToList();
+
+            ViewExpenses(filtered);
+        }
     }
 }
