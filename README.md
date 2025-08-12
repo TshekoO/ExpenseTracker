@@ -5,16 +5,16 @@ Supports **categories, filtering, data export, and persistent storage** via JSON
 
 ---
 ### Main Menu
-**1.Add Expense**
-**2.View All Expenses**
-3.Filter by Category
-4.Filter by Date Range
-5.Show Total Spending
-6.Export to CSV
-7.Exit
+1. Add Expense
+2. View All Expenses
+3. Filter by Category
+4. Filter by Date Range
+5. Show Total Spending
+6. Export to CSV
+7. Exit
 ### Example Output
-2025-08-11 | Food | R150.00 | Lunch with friends
-2025-08-10 | Transport | R50.00 | Bus ticket
+- 2025-08-11 | Food | R150.00 | Lunch with friends
+- 2025-08-10 | Transport | R50.00 | Bus ticket
 
 ---
 
