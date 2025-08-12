@@ -73,7 +73,31 @@ namespace ExpenseTracker
         // Add a new expense
         static void AddExpense()
         {
+            Console.write("Enter amount: R");
+
+            // Validate numeric input 
+            if (!decimal.TryParse(Console.ReadLine(), out decimal amount))
+            {
+                Console.WriteLine("Invalid amount. Press any key to return.");
+                Console.ReadKey();
+                return;
+            }
+            Console.Write("Enter category: ");
+            string category = Console.ReadLine();
+
+            Console.Write("Enter description: ");
+            string description = Console.ReadLine();
+            // Add expense to list
+            expenses.Add(new Expense
+            {
+                Amount = amount,
+                Category = category,
+                Description = description,
+                Date = DateTime.Now
             
+            }
+            );
         }
+
     }
 }
