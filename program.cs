@@ -157,5 +157,34 @@ namespace ExpenseTracker
 
             ViewExpenses(filtered);
         }
+        // Calculate and show total spending
+        static void ShowTotalSpending()
+        {
+            decimal total = expenses.Sum(e => e.Amount);
+            Console.WriteLine($"\nTotal Spending: R{total}");
+            Console.WriteLine("Press any key to return...");
+            Console.ReadKey();
+        }
+        // Export all expenses to a CSV file
+        static void ExportToCsv()
+        {
+            string csvPath = "expenses.csv";
+            var csv = new StringBuilder();
+
+            // add CSV header
+            csv.AppendLine("Date,Category,Amount,Description");
+
+            // Add each expense as a CSV row
+            foreach (var e in expenses)
+            {
+                csv.AppendLine($"{e.Date:yyyy-MM-dd},{e.Category},{e.Amount},{e.Description}");
+
+            }
+            File.WriteAllText(csvPath, csv.ToString());
+
+            Console.WriteLine($"Exported to {csvPath}");
+            Console.WriteLine("Press any key to return...");
+            Console.ReadKey();
+        }
     }
 }
