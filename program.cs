@@ -32,7 +32,48 @@ namespace ExpenseTracker
 
         static void Main()
         {
-            //Load 
+            //Load any previously saved expenses 
+            LoadExpenses();
+
+            // Main menu loop
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("== Expense Tracker ===");
+                Console.WriteLine("1. Add Expenses");
+                Console.WriteLine("2.View All Expenses");
+                Console.WriteLine("3.Filter by Category");
+                Console.WriteLine("4.Filter by Date Range");
+                Console.WriteLine("5. Show Total Spending");
+                Console.WriteLine("6. Export to CSV");
+                Console.WriteLine("7. Exit");
+                Console.Write("Choose an option: ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1": AddExpense(); break;
+                    case "2": ViewExpenses(expenses); break;
+                    case "3": FilterByCategory(); break;
+                    case "4": FilterByDateRange(); break;
+                    case "5": ShowTotalSpending(); break;
+                    case "6": ExportToCsv(); break;
+                    case "7":
+                        SaveExpenses(); // Save before exiting 
+                        Console.WriteLine("Data saved. Goodbye!");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice. Press any key to try again...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+        }
+        // Add a new expense
+        static void AddExpense()
+        {
+            
         }
     }
 }
