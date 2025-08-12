@@ -22,4 +22,17 @@ namespace ExpenseTracker
             return $"{Date:yyyy-MM-dd} | {Category,-15} | R{Amount,-8} | {Description}";
         }
     }
+    public class Program
+    {
+        // File where expenses will be saved
+        static string FilePath = "expenses.json";
+
+        // List to hold all expenses records 
+        static List<Expenses> expenses = new List<Expenses>();
+
+        static void Main()
+        {
+            //Load 
+        }
+    }
 }
