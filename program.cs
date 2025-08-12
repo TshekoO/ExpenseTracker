@@ -186,5 +186,12 @@ namespace ExpenseTracker
             Console.WriteLine("Press any key to return...");
             Console.ReadKey();
         }
+        // Save expenses to JSON file
+        static void SaveExpenses()
+        {
+            string json = JsonSerializer.Serialize(expenses, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(FilePath, json);
+            
+        }
     }
 }
