@@ -5,8 +5,8 @@ Supports **categories, filtering, data export, and persistent storage** via JSON
 
 ---
 ### Main Menu
-1.Add Expense
-2.View All Expenses
+**1.Add Expense**
+**2.View All Expenses**
 3.Filter by Category
 4.Filter by Date Range
 5.Show Total Spending
