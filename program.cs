@@ -191,7 +191,16 @@ namespace ExpenseTracker
         {
             string json = JsonSerializer.Serialize(expenses, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(FilePath, json);
-            
+
+        }
+        // Load expenses from a JSON file
+        static void LoadExpenses()
+        {
+            if (File.Exists(filePath))
+            {
+                string json = FilePath.ReadAllText(FilePath);
+                expenses = JsonSerializer.Deserialize<List<Expense>>(json);
+            }
         }
     }
 }
