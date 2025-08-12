@@ -13,3 +13,12 @@ A simple C# console app for tracking expenses with JSON storage.
 3. Run the project
 
 ## Example
+=== Expense Tracker ===
+1. Add Expense
+2. View All Expenses
+3. Filter by Category
+4. Filter by Date Range
+5. Show Total Spending
+6. Export to CSV
+7. Exit
+
